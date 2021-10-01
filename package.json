@@ -48,7 +48,12 @@
         "zip": "gulp zip"
     },
     "devDependencies": {
+        "@babel/core": "^7.15.5",
+        "@babel/preset-env": "^7.15.6",
+        "@babel/preset-react": "^7.14.5",
+        "@svgr/webpack": "^5.5.0",
         "autoprefixer": "^10.3.6",
+        "babel-loader": "^8.2.2",
         "beeper": "2.1.0",
         "css-loader": "^6.3.0",
         "css-minimizer-webpack-plugin": "^3.0.2",
@@ -78,7 +83,7 @@
     ],
     "dependencies": {
         "@fontsource/montserrat": "^4.5.1",
-        "@tryghost/portal": "^1.11.0",
+        "@tryghost/portal": "TryGhost/portal#v1.11.0",
         "elasticlunr": "^0.9.5",
         "fitvids.js": "^1.2.0",
         "infinite-scroll": "^4.0.1",

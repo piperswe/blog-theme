@@ -11,7 +11,7 @@ import 'prismjs';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 import 'prism-themes/themes/prism-nord.css';
 
-import '@tryghost/portal';
+import '@tryghost/portal/src';
 
 // Register jQuery functions
 window.jQuery = window.$ = $;

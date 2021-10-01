@@ -42,6 +42,22 @@ function pack(done) {
             module: {
                 rules: [
                     {
+                        test: /\.m?js$/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: [
+                                    '@babel/preset-env',
+                                    '@babel/preset-react',
+                                ],
+                            },
+                        },
+                    },
+                    {
+                        test: /\.svg$/,
+                        use: ['@svgr/webpack'],
+                    },
+                    {
                         test: /\.css$/i,
                         use: [
                             MiniCssExtractPlugin.loader,
