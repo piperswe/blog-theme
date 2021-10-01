@@ -7,8 +7,7 @@ import 'katex';
 import 'katex/contrib/auto-render/auto-render';
 import 'katex/dist/katex.min.css';
 
-import 'prismjs';
-import 'prismjs/plugins/autoloader/prism-autoloader';
+import Prism from 'prismjs';
 import 'prism-themes/themes/prism-nord.css';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -24,6 +23,9 @@ require('owl.carousel');
 require('photoswipe/dist/photoswipe');
 require('photoswipe/dist/photoswipe-ui-default');
 require('fitvids.js');
+
+// Set up syntax highlighting
+Prism.highlightAll();
 
 var html = $('html');
 var body = $('body');
