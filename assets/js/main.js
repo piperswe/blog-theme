@@ -1,11 +1,11 @@
 import $ from 'jquery';
 window.jQuery = window.$ = $;
 import * as elasticlunr from 'elasticlunr';
-import 'infinite-scroll';
-import 'lazysizes';
-import 'owl.carousel';
-import 'photoswipe/dist/photoswipe';
-import 'photoswipe/dist/photoswipe-ui-default';
+require('infinite-scroll');
+require('lazysizes');
+require('owl.carousel');
+require('photoswipe/dist/photoswipe');
+require('photoswipe/dist/photoswipe-ui-default');
 
 import '../css/screen.css';
 
