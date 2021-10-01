@@ -14,7 +14,7 @@ import 'prism-themes/themes/prism-nord.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'photoswipe/dist/photoswipe.css';
 
-import '@tryghost/portal/umd/portal.min.js';
+// import '@tryghost/portal/umd/portal.min.js';
 
 // Register jQuery functions
 window.jQuery = window.$ = $;
