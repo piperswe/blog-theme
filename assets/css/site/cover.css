@@ -18,6 +18,7 @@
 
 .cover-icon-image {
     width: 150px;
+    border-radius: 100%;
 }
 
 .cover-icon-image.white {
