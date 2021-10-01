@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     height: var(--navbar-height);
+    font-family: var(--font-header);
 }
 
 .header-left,
