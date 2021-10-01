@@ -57,14 +57,6 @@
     <script src="{{asset "built/main.min.js"}}"></script>
 
     {{ghost_foot}}
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('{{ asset "js/sw.js" }}');
-            });
-        }
-    </script>
 </body>
 
 </html>
