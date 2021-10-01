@@ -67,6 +67,12 @@
     text-decoration: underline;
 }
 
+@supports (font-variation-settings: normal) {
+    .u-text-format h4, .u-text-format h5, .u-text-format h6, .u-text-format a {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 .u-text-format ul li + li,
 .u-text-format ol li + li {
     margin-top: 1rem;

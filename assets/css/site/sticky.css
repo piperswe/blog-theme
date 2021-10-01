@@ -26,6 +26,12 @@
     white-space: nowrap;
 }
 
+@supports (font-variation-settings: normal) {
+    .sticky-title {
+        font-variation-settings: "wght" 800;
+    }
+}
+
 .sticky-toc-button {
     flex-shrink: 0;
     margin-right: -6px;
@@ -59,6 +65,12 @@
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+@supports (font-variation-settings: normal) {
+    .sticky-toc-link {
+        font-variation-settings: "wght" 700;
+    }
 }
 
 .sticky-toc-link-indented::before {
@@ -96,5 +108,11 @@
     .sticky-title {
         font-size: 1.4rem;
         font-weight: 700;
+    }
+
+    @supports (font-variation-settings: normal) {
+        .sticky-title {
+            font-variation-settings: "wght" 700;
+        }
     }
 }

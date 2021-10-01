@@ -32,6 +32,12 @@
     font-weight: 700;
 }
 
+@supports (font-variation-settings: normal) {
+    .plan-amount {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 .plan-feature-list {
     flex-grow: 1;
     margin: 2rem 0 3rem;

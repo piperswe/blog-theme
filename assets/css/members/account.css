@@ -51,6 +51,16 @@
     font-weight: 800;
 }
 
+@supports (font-variation-settings: normal) {
+    .account-row-title {
+        font-variation-settings: "wght" 700;
+    }
+
+    .account-row-value {
+        font-variation-settings: "wght" 800;
+    }
+}
+
 .account-status {
     padding: 0.5rem 0.8rem;
     height: 100%;

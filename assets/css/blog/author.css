@@ -27,6 +27,12 @@
     text-transform: uppercase;
 }
 
+@supports (font-variation-settings: normal) {
+    .author-meta {
+        font-variation-settings: "wght" 800;
+    }
+}
+
 .author-bio {
     margin-top: 1rem;
     max-width: 500px;

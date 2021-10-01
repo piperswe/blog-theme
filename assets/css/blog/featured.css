@@ -12,6 +12,12 @@
     font-weight: 700;
 }
 
+@supports (font-variation-settings: normal) {
+    .featured-wrapper .post-title {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 .featured-title {
     margin-bottom: 4.5rem;
     padding-bottom: 1rem;

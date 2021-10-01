@@ -11,6 +11,12 @@
     text-transform: uppercase;
 }
 
+@supports (font-variation-settings: normal) {
+    .single-meta {
+        font-variation-settings: "wght" 800;
+    }
+}
+
 .single-meta-item + .single-meta-item::before {
     content: "\02022";
     padding: 0 0.3rem;
@@ -59,6 +65,16 @@
     font-size: 1.4rem;
     font-weight: 400 !important;
     letter-spacing: -0.02rem;
+}
+
+@supports (font-variation-settings: normal) {
+    .single-cta-button {
+        font-variation-settings: "wght" 800 !important;
+    }
+
+    .single-cta-footer {
+        font-variation-settings: "wght" 400 !important;
+    }
 }
 
 .single-footer {

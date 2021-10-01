@@ -1,8 +1,12 @@
-@import "@fontsource/montserrat/400.css";
-@import "@fontsource/montserrat/400-italic.css";
-@import "@fontsource/montserrat/700.css";
-@import "@fontsource/montserrat/700-italic.css";
-@import "@fontsource/montserrat/800.css";
+@import "@fontsource/sora/400.css";
+@import "@fontsource/sora/700.css";
+@import "@fontsource/sora/800.css";
+@import "@fontsource/sora/variable.css";
+
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/800.css";
+@import "@fontsource/inter/variable.css";
 
 :root {
     --brand-color: var(--ghost-accent-color, #ff572f);
@@ -22,13 +26,22 @@
     --twitter-color: #1da1f2;
     --rss-color: #f26522;
     --animation-base: ease-in-out;
-    --font-base: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+    --font-base: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+    --font-header: Sora, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
     --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; /* stylelint-disable-line value-keyword-case */
     --navbar-height: 80px;
 }
 
+@supports (font-variation-settings: normal) {
+     :root {
+        --font-base: InterVariable, Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+        --font-header: SoraVariable, Sora, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+        font-variation-settings: "wght" 400;
+    }
+}
+
 @media (max-width: 767px) {
-    :root {
+     :root {
         --navbar-height: 70px;
     }
 }
@@ -74,9 +87,20 @@ h5,
 h6 {
     margin: 0 0 1.5rem;
     color: var(--darker-gray-color);
-    font-family: var(--font-base);
+    font-family: var(--font-header);
     line-height: 1.3;
     font-weight: 800;
+}
+
+@supports (font-variation-settings: normal) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-variation-settings: "wght" 800;
+    }
 }
 
 p {
@@ -106,6 +130,12 @@ blockquote {
 
 blockquote strong {
     font-weight: 700;
+}
+
+@supports (font-variation-settings: normal) {
+    blockquote, blockquote strong {
+        font-variation-settings: "wght" 700;
+    }
 }
 
 ul,
@@ -138,6 +168,12 @@ figcaption a {
     font-weight: 400 !important;
 }
 
+@supports (font-variation-settings: normal) {
+    figcaption a {
+        font-variation-settings: "wght" 400 !important;
+    }
+}
+
 pre {
     overflow-x: scroll;
     padding: 1.6rem 2.2rem;
@@ -154,7 +190,7 @@ code {
     font-size: 14px;
 }
 
-:not(pre) > code {
+:not(pre)>code {
     padding: 0.3rem 0.4rem;
     background-color: var(--lighter-gray-color);
     border-radius: 3px;
@@ -208,7 +244,7 @@ table:not(.highlight) thead {
     background-color: var(--lighter-gray-color);
 }
 
-table:not(.highlight) tr + table:not(.highlight) tr {
+table:not(.highlight) tr+table:not(.highlight) tr {
     border-top: 1px solid var(--light-gray-color);
 }
 
@@ -235,16 +271,20 @@ table:not(.highlight) tfoot td {
     font-weight: 700;
 }
 
+@supports (font-variation-settings: normal) {
+    table:not(.highlight) tfoot td {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 @media (max-width: 767px) {
     .table thead {
         display: none;
     }
-
     .table tr {
         display: block;
         padding: 1.2rem 0;
     }
-
     .table td {
         display: flex;
         justify-content: space-between;
@@ -252,7 +292,6 @@ table:not(.highlight) tfoot td {
         width: 100%;
         text-align: right;
     }
-
     .table td::before {
         content: attr(data-label);
         margin-right: 1rem;

@@ -38,6 +38,12 @@
     white-space: nowrap;
 }
 
+@supports (font-variation-settings: normal) {
+    .feed-calendar {
+        font-variation-settings: "wght" 800;
+    }
+}
+
 .feed-calendar-month {
     margin-right: 0.4rem;
     text-transform: uppercase;
@@ -52,6 +58,12 @@
     font-weight: 400;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+@supports (font-variation-settings: normal) {
+    .feed-title {
+        font-variation-settings: "wght" 400;
+    }
 }
 
 .feed-right {

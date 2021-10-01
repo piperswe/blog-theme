@@ -23,6 +23,12 @@
     font-weight: 700;
 }
 
+@supports (font-variation-settings: normal) {
+    .tag-list {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 .tag-list-label {
     margin-right: 0.5rem;
     color: var(--secondary-text-color);

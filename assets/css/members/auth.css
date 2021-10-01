@@ -38,3 +38,9 @@
     font-weight: 700;
     text-decoration: underline;
 }
+
+@supports (font-variation-settings: normal) {
+    .auth-subtitle, .auth-footer-link {
+        font-variation-settings: "wght" 700;
+    }
+}

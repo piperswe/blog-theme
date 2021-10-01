@@ -5,6 +5,12 @@ label {
     font-weight: 700;
 }
 
+@supports (font-variation-settings: normal) {
+    label {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 label + label {
     margin-top: 2rem;
 }

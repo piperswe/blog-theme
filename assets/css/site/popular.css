@@ -20,6 +20,12 @@
     font-weight: 700;
 }
 
+@supports (font-variation-settings: normal) {
+    .popular {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 .popular::before {
     content: "#";
 }

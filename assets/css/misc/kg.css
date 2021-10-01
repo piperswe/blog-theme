@@ -78,6 +78,20 @@
     font-weight: 700;
 }
 
+@supports (font-variation-settings: normal) {
+    .kg-bookmark-title {
+        font-variation-settings: "wght" 800;
+    }
+
+    .kg-bookmark-description {
+        font-variation-settings: "wght" 400;
+    }
+
+    .kg-bookmark-metadata {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 .kg-bookmark-icon {
     margin-right: 5px;
     width: 20px;

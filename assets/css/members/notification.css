@@ -21,6 +21,14 @@
     pointer-events: none;
 }
 
+
+
+@supports (font-variation-settings: normal) {
+    .notification {
+        font-variation-settings: "wght" 700;
+    }
+}
+
 .error .notification {
     border-top-color: var(--red-color);
 }

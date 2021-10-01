@@ -17,6 +17,12 @@
     border-radius: 3px;
 }
 
+@supports (font-variation-settings: normal) {
+    .share-link {
+        font-variation-settings: "wght" 800;
+    }
+}
+
 .share-link .icon {
     width: 14px;
     height: 14px;

@@ -54,6 +54,12 @@
     font-weight: 400;
 }
 
+@supports (font-variation-settings: normal) {
+    .footer-nav .menu-item {
+        font-variation-settings: "wght" 400;
+    }
+}
+
 .footer-nav .menu-item + .menu-item::before {
     content: "\02022";
     padding: 0 0.7rem;

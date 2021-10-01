@@ -54,6 +54,16 @@
     font-weight: 700;
 }
 
+@supports (font-variation-settings: normal) {
+    .menu-item {
+        font-variation-settings: "wght" 700;
+    }
+
+    .logo-text {
+        font-variation-settings: "wght" 800;
+    }
+}
+
 .menu-item[href*="..."],
 .menu-item[href*="..."] ~ .menu-item {
     display: none;
