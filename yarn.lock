@@ -1945,9 +1945,10 @@
   dependencies:
     "@elastic/elasticsearch" "^7.10.0"
 
-"@tryghost/portal@TryGhost/portal#v1.11.0":
+"@tryghost/portal@^1.11.0":
   version "1.11.0"
-  resolved "https://codeload.github.com/TryGhost/portal/tar.gz/db64466d70f05ba58e9ec31a39f4ac5b207be4d6"
+  resolved "https://registry.yarnpkg.com/@tryghost/portal/-/portal-1.11.0.tgz#df0b7f00c99843742c0f6765eed8727b3a38bc8e"
+  integrity sha512-yvw/lLCkYY1BBYShhJ+Q5FWD1Zwl/VV6N3kAYwM5OZkN1lIJXYj6HGKKn55UwCK6t1vQtV+EHApObEL5RwfxRQ==
   dependencies:
     "@sentry/react" "6.12.0"
     "@sentry/tracing" "6.12.0"

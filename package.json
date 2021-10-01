@@ -83,7 +83,7 @@
     ],
     "dependencies": {
         "@fontsource/montserrat": "^4.5.1",
-        "@tryghost/portal": "TryGhost/portal#v1.11.0",
+        "@tryghost/portal": "^1.11.0",
         "elasticlunr": "^0.9.5",
         "fitvids.js": "^1.2.0",
         "infinite-scroll": "^4.0.1",
