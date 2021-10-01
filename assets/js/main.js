@@ -38,6 +38,7 @@ require('prismjs/components/prism-yaml');
 require('prismjs/components/prism-rust');
 require('prismjs/components/prism-clojure');
 require('prismjs/components/prism-go');
+require('prismjs/components/prism-nginx');
 Prism.highlightAll();
 
 var html = $('html');
