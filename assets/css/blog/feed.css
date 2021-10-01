@@ -44,8 +44,11 @@
     }
 }
 
-.feed-calendar-month {
+.feed-calendar-month, .feed-calendar-day {
     margin-right: 0.4rem;
+}
+
+.feed-calendar-month {
     text-transform: uppercase;
 }
 
