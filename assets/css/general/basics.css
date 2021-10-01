@@ -307,3 +307,8 @@ table:not(.highlight) tfoot td {
         white-space: nowrap;
     }
 }
+
+::selection {
+    background: var(--brand-color);
+    color: white;
+}
