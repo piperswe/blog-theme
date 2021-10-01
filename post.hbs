@@ -1,13 +1,11 @@
-{{!< default}}
-
-<div class="content-area">
+{{!< default}} <div class="content-area">
     <main class="site-main">
         {{#post}}
-            {{> content width="wide"}}
+        {{> content width="wide"}}
         {{/post}}
         {{#is "post"}}
-            {{> related}}
-            {{> comment}}
+        {{> related}}
+        {{> comment}}
         {{/is}}
     </main>
-</div>
+    </div>

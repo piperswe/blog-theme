@@ -65,8 +65,8 @@ function sticky() {
     progress.css(
         'transform',
         'translate3d(' +
-            (-100 + Math.min((st * 100) / contentOffset, 100)) +
-            '%,0,0)'
+        (-100 + Math.min((st * 100) / contentOffset, 100)) +
+        '%,0,0)'
     );
 
     lastSt = st;
@@ -380,12 +380,12 @@ function search() {
 
         $.get(
             url +
-                "&filter=updated_at:>'" +
-                localStorage
-                    .getItem('dawn_search_last')
-                    .replace(/\..*/, '')
-                    .replace(/T/, ' ') +
-                "'",
+            "&filter=updated_at:>'" +
+            localStorage
+                .getItem('dawn_search_last')
+                .replace(/\..*/, '')
+                .replace(/T/, ' ') +
+            "'",
             function (data) {
                 if (data.posts.length > 0) {
                     update(data);
