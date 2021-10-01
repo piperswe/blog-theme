@@ -1,3 +1,21 @@
+import $ from 'jquery';
+import * as elasticlunr from 'elasticlunr';
+import 'infinite-scroll';
+import 'lazysizes';
+import 'owl.carousel';
+import 'photoswipe/dist/photoswipe';
+import 'photoswipe/dist/photoswipe-ui-default';
+
+import '../css/screen.css';
+
+import 'katex';
+import 'katex/contrib/auto-render/auto-render';
+import 'katex/dist/katex.min.css';
+
+import 'prismjs';
+import 'prismjs/plugins/autoloader/prism-autoloader';
+import 'prism-themes/themes/prism-nord.css';
+
 var html = $('html');
 var body = $('body');
 var timeout;

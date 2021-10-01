@@ -1,19 +1,14 @@
-const {series, parallel, watch, src, dest} = require('gulp');
+const { series, parallel, watch, src, dest } = require('gulp');
 const pump = require('pump');
 
 // gulp plugins and utils
 const livereload = require('gulp-livereload');
 const gulpStylelint = require('gulp-stylelint');
-const postcss = require('gulp-postcss');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
 const beeper = require('beeper');
 const zip = require('gulp-zip');
-
-// postcss plugins
-const easyimport = require('postcss-easy-import');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+const webpackStream = require('webpack-stream');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 function serve(done) {
     livereload.listen();
@@ -36,40 +31,42 @@ function hbs(done) {
     ], handleError(done));
 }
 
-function css(done) {
+function pack(done) {
     pump([
-        src('assets/css/screen.css', {sourcemaps: true}),
-        postcss([
-            easyimport,
-            autoprefixer(),
-            cssnano()
+        src([
+            'assets/js/main.js',
         ]),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done));
-}
-
-function js(done) {
-    pump([
-        src([
-            'assets/js/lib/*.js',
-            'assets/js/main.js'
-        ], {sourcemaps: true}),
-        concat('main.min.js'),
-        uglify(),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done));
-}
-
-function sw(done) {
-    pump([
-        src([
-            'assets/js/sw.js'
-        ], {sourcemaps: true}),
-        concat('sw.min.js'),
-        uglify(),
-        dest('assets/built/', {sourcemaps: '.'}),
+        webpackStream({
+            mode: process.env.NODE_ENV || 'production',
+            devtool: 'source-map',
+            module: {
+                rules: [
+                    {
+                        test: /\.css$/i,
+                        use: [
+                            MiniCssExtractPlugin.loader,
+                            'css-loader',
+                            {
+                                loader: 'postcss-loader',
+                                options: {
+                                    postcssOptions: {
+                                        plugins: [
+                                            'postcss-preset-env',
+                                            'autoprefixer',
+                                        ],
+                                    },
+                                },
+                            },
+                        ],
+                    },
+                ],
+            },
+            plugins: [
+                new MiniCssExtractPlugin(),
+                new CssMinimizerPlugin(),
+            ],
+        }),
+        dest('assets/built/', { sourcemaps: '.' }),
         livereload()
     ], handleError(done));
 }
@@ -80,7 +77,7 @@ function lint(done) {
         gulpStylelint({
             fix: true,
             reporters: [
-                {formatter: 'string', console: true}
+                { formatter: 'string', console: true }
             ]
         }),
         dest('assets/css/')
@@ -103,11 +100,9 @@ function zipper(done) {
 }
 
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', 'members/**/*.hbs'], hbs);
-const cssWatcher = () => watch('assets/css/**/*.css', css);
-const jsWatcher = () => watch('assets/js/**/*.js', js);
-const swWatcher = () => watch('assets/js/sw.js', sw);
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher, swWatcher);
-const build = parallel(css, js, sw);
+const jsWatcher = () => watch('assets/js/**/*.js', pack);
+const watcher = parallel(hbsWatcher, jsWatcher);
+const build = pack;
 
 exports.build = build;
 exports.lint = lint;
