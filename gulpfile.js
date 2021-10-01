@@ -9,6 +9,7 @@ const zip = require('gulp-zip');
 const webpackStream = require('webpack-stream');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const webpack = require('webpack');
 
 function serve(done) {
     livereload.listen();
@@ -82,6 +83,9 @@ function pack(done) {
             plugins: [
                 new MiniCssExtractPlugin(),
                 new CssMinimizerPlugin(),
+                new webpack.EnvironmentPlugin({
+                    'REACT_APP_VERSION': process.env.REACT_APP_VERSION || '1.11.0'
+                }),
             ],
         }),
         dest('assets/built/', { sourcemaps: '.' }),
