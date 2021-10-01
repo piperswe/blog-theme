@@ -53,11 +53,6 @@ function pack(done) {
                                     '@babel/preset-react',
                                 ],
                                 compact: true,
-                                plugins: [
-                                    ['prismjs', {
-                                        langauges: 'all',
-                                    }],
-                                ],
                             },
                         },
                     },
