@@ -1,11 +1,5 @@
 import $ from 'jquery';
-window.jQuery = window.$ = $;
 import * as elasticlunr from 'elasticlunr';
-require('infinite-scroll');
-require('lazysizes');
-require('owl.carousel');
-require('photoswipe/dist/photoswipe');
-require('photoswipe/dist/photoswipe-ui-default');
 
 import '../css/screen.css';
 
@@ -16,6 +10,14 @@ import 'katex/dist/katex.min.css';
 import 'prismjs';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 import 'prism-themes/themes/prism-nord.css';
+
+// Register jQuery functions
+window.jQuery = window.$ = $;
+require('infinite-scroll');
+require('lazysizes');
+require('owl.carousel');
+require('photoswipe/dist/photoswipe');
+require('photoswipe/dist/photoswipe-ui-default');
 
 var html = $('html');
 var body = $('body');
