@@ -11,6 +11,8 @@ import 'prismjs';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 import 'prism-themes/themes/prism-nord.css';
 
+import '@tryghost/portal';
+
 // Register jQuery functions
 window.jQuery = window.$ = $;
 require('infinite-scroll');
@@ -18,6 +20,7 @@ require('lazysizes');
 require('owl.carousel');
 require('photoswipe/dist/photoswipe');
 require('photoswipe/dist/photoswipe-ui-default');
+require('fitvids.js');
 
 var html = $('html');
 var body = $('body');
