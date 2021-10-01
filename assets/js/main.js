@@ -1,4 +1,5 @@
 import $ from 'jquery';
+window.jQuery = window.$ = $;
 import * as elasticlunr from 'elasticlunr';
 import 'infinite-scroll';
 import 'lazysizes';
