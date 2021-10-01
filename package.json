@@ -20,23 +20,23 @@
     "config": {
         "posts_per_page": 5,
         "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
             "xs": {
-                "width": 150
+                "width": 100
             },
             "s": {
-                "width": 400
+                "width": 300
             },
             "m": {
-                "width": 750
+                "width": 600
             },
             "l": {
-                "width": 960
+                "width": 1000
             },
             "xl": {
-                "width": 1140
-            },
-            "xxl": {
-                "width": 1920
+                "width": 2000
             }
         }
     },
