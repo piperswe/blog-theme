@@ -37,6 +37,7 @@ function pack(done) {
             'assets/js/main.js',
         ]),
         webpackStream({
+            entry: ['regenerator-runtime/runtime.js', './assets/js/main.js'],
             mode: process.env.NODE_ENV || 'production',
             devtool: 'source-map',
             module: {
@@ -50,6 +51,7 @@ function pack(done) {
                                     '@babel/preset-env',
                                     '@babel/preset-react',
                                 ],
+                                compact: true,
                             },
                         },
                     },

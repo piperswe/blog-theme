@@ -13,6 +13,9 @@ import 'prism-themes/themes/prism-nord.css';
 
 import '@tryghost/portal/src';
 
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'photoswipe/dist/photoswipe.css';
+
 // Register jQuery functions
 window.jQuery = window.$ = $;
 require('infinite-scroll');
