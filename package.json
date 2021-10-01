@@ -83,6 +83,7 @@
     ],
     "dependencies": {
         "@fontsource/cabin": "^4.5.0",
+        "@fontsource/jetbrains-mono": "^4.5.0",
         "@fontsource/sora": "^4.5.0",
         "@tryghost/portal": "^1.11.0",
         "elasticlunr": "^0.9.5",
