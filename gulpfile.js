@@ -62,6 +62,18 @@ function js(done) {
     ], handleError(done));
 }
 
+function sw(done) {
+    pump([
+        src([
+            'assets/js/sw.js'
+        ], {sourcemaps: true}),
+        concat('sw.min.js'),
+        uglify(),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+}
+
 function lint(done) {
     pump([
         src(['assets/css/**/*.css', '!assets/css/vendor/*']),
@@ -93,8 +105,9 @@ function zipper(done) {
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', 'members/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
-const build = series(css, js);
+const swWatcher = () => watch('assets/js/sw.js', sw);
+const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher, swWatcher);
+const build = parallel(css, js, sw);
 
 exports.build = build;
 exports.lint = lint;

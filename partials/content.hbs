@@ -3,7 +3,7 @@
         {{#is "post"}}
         <div class="single-meta">
             <span class="single-meta-item single-meta-date">
-                <time datetime="{{date format=" YYYY-MM-DD"}}">
+                <time datetime="{{date format="YYYY-MM-DD"}}">
                     {{date published_at}}
                 </time>
             </span>
@@ -30,7 +30,7 @@
         <figure class="single-media kg-width-{{width}}">
             <div class="u-placeholder horizontal">
                 <img class="lazyload u-object-fit" data-srcset="{{> srcset}}" data-sizes="auto"
-                    src="{{img_url feature_image size=" l"}}"
+                    src="{{img_url feature_image size="l"}}"
                     srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                     alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
             </div>
@@ -66,7 +66,7 @@
                     <div class="author-image-placeholder u-placeholder square">
                         <a href="{{url}}" title="{{name}}">
                             <img class="author-image lazyload u-object-fit" data-srcset="{{img_url profile_image size="
-                                xs"}}" src="{{img_url profile_image size=" xs"}}"
+                                xs"}}" src="{{img_url profile_image size="xs"}}"
                                 srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                 alt="{{name}}">
                         </a>
@@ -77,7 +77,7 @@
             <div class="single-footer-bottom">
                 <div class="share">
                     <a class="share-link share-link-facebook"
-                        href="https://www.facebook.com/sharer.php?u={{url absolute=" true"}}" target="_blank"
+                        href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank"
                         rel="noopener noreferrer">
                         <svg class="icon icon-facebook">
                             <use xlink:href="#facebook"></use>

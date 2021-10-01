@@ -34,7 +34,7 @@
     {{ghost_head}}
 </head>
 
-<body class="{{body_class}}{{{block " body_class"}}}">
+<body class="{{body_class}}{{{block "body_class"}}}">
     {{> icons}}
 
     <div class="site">
@@ -61,7 +61,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('{{ asset "sw.js" }}');
+                navigator.serviceWorker.register('{{ asset "js/sw.js" }}');
             });
         }
     </script>
