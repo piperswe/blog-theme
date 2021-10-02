@@ -16,7 +16,7 @@
 @import "@fontsource/jetbrains-mono/variable-italic.css";
 
 :root {
-    --brand-color: var(--ghost-accent-color, #ff572f);
+    --brand-color: var(--ghost-accent-color, #b946af);
     --primary-text-color: #0a0f1b;
     --secondary-text-color: #999;
     --white-color: #fff;
