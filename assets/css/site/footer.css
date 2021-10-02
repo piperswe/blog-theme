@@ -31,10 +31,10 @@
 
 .copyright a {
     color: var(--secondary-text-color);
+    text-decoration: underline;
 }
 
 .copyright a:hover {
-    text-decoration: underline;
     opacity: 1;
 }
 
