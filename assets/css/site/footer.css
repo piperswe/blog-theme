@@ -30,6 +30,7 @@
 }
 
 .copyright a {
+    opacity: 0.9;
     color: var(--secondary-text-color);
     text-decoration: underline;
 }
