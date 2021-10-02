@@ -194,7 +194,7 @@ pre {
 }
 
 code {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono) !important;
     font-size: 14px;
 }
 
