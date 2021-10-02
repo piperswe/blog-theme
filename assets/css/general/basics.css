@@ -194,7 +194,7 @@ pre {
 }
 
 code {
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-mono);
     font-size: 14px;
 }
 
@@ -312,10 +312,4 @@ table:not(.highlight) tfoot td {
     background: var(--brand-color);
     color: var(--white-color);
     text-shadow: 0 0 0.1em var(--white-color);
-}
-
-@supports (font-variation-settings: normal) {
-    .token.bold {
-        font-variation-settings: "wght" 700;
-    }
 }

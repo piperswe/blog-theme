@@ -8,7 +8,6 @@ import 'katex/contrib/auto-render/auto-render';
 import 'katex/dist/katex.min.css';
 
 import Prism from 'prismjs';
-import 'prism-themes/themes/prism-synthwave84.css';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'photoswipe/dist/photoswipe.css';
