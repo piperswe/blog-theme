@@ -311,5 +311,5 @@ table:not(.highlight) tfoot td {
 ::selection {
     background: var(--brand-color);
     color: var(--white-color);
-    text-shadow: 0 0 0.25em var(--white-color);
+    text-shadow: 0 0 0.1em var(--white-color);
 }
