@@ -44,7 +44,8 @@
     }
 }
 
-.feed-calendar-month, .feed-calendar-day {
+.feed-calendar-month,
+.feed-calendar-day {
     margin-right: 0.4rem;
 }
 

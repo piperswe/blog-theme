@@ -40,7 +40,8 @@
 }
 
 @supports (font-variation-settings: normal) {
-    .auth-subtitle, .auth-footer-link {
+    .auth-subtitle,
+    .auth-footer-link {
         font-variation-settings: "wght" 700;
     }
 }

@@ -21,8 +21,6 @@
     pointer-events: none;
 }
 
-
-
 @supports (font-variation-settings: normal) {
     .notification {
         font-variation-settings: "wght" 700;

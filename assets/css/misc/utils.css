@@ -68,7 +68,10 @@
 }
 
 @supports (font-variation-settings: normal) {
-    .u-text-format h4, .u-text-format h5, .u-text-format h6, .u-text-format a {
+    .u-text-format h4,
+    .u-text-format h5,
+    .u-text-format h6,
+    .u-text-format a {
         font-variation-settings: "wght" 700;
     }
 }
