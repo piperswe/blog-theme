@@ -313,3 +313,9 @@ table:not(.highlight) tfoot td {
     color: var(--white-color);
     text-shadow: 0 0 0.1em var(--white-color);
 }
+
+@supports (font-variation-settings: normal) {
+    .token.bold {
+        font-variation-settings: "wght" 700;
+    }
+}
