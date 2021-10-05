@@ -21,8 +21,8 @@
             {{#if feature_image}}
             <div class="container">
                 <div class="tag-media u-placeholder horizontal">
-                    <img class="u-object-fit" srcset="{{> srcset img=feature_image}}" src="{{img_url feature_image size="l"}}"
-                        alt="{{name}}">
+                    <img class="u-object-fit" data-srcset="{{> srcset img=feature_image}}" data-sizes="auto"
+                        src="{{img_url feature_image size="l"}}" alt="{{name}}">
                 </div>
             </div>
             {{/if}}
