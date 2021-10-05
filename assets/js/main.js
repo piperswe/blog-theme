@@ -14,8 +14,6 @@ import 'photoswipe/dist/photoswipe.css';
 
 import '@tryghost/portal/umd/portal.min.js';
 
-import twemoji from 'twemoji';
-
 // Register jQuery functions
 window.jQuery = window.$ = $;
 require('infinite-scroll');
@@ -66,7 +64,6 @@ $(function () {
     search();
     burger();
     theme();
-    twemoji.parse(document.body);
 });
 
 $(window).on('scroll', function () {
