@@ -13,9 +13,7 @@
 
     <script>
         var siteUrl = '{{@site.url}}';
-    </script>
 
-    <script>
         var localTheme = localStorage.getItem('dawn_theme');
         switch (localTheme) {
             case 'dark':
@@ -52,6 +50,24 @@
         {{> pswp}}
     </div>
 
+    <script>
+        const imgs = Array.from(document.querySelectorAll('img:not([srcset])'));
+        for (const img of imgs) {
+            const src = img.src;
+            const srcset = `
+                /cdn-cgi/image/fit=scale-down,width=30,format=auto/${src} 30w,
+                /cdn-cgi/image/fit=scale-down,width=100,format=auto/${src} 100w,
+                /cdn-cgi/image/fit=scale-down,width=300,format=auto/${src} 300w,
+                /cdn-cgi/image/fit=scale-down,width=600,format=auto/${src} 600w,
+                /cdn-cgi/image/fit=scale-down,width=1000,format=auto/${src} 1000w,
+                /cdn-cgi/image/fit=scale-down,width=2000,format=auto/${src} 2000w
+            `;
+            img.dataset.srcset = srcset;
+            img.dataset.sizes = 'auto';
+            img.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+            img.classList.add('lazyload');
+        }
+    </script>
     <script src="{{asset "built/main.js"}}"></script>
 
     {{ghost_foot}}
