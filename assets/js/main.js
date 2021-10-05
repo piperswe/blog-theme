@@ -14,7 +14,7 @@ import 'photoswipe/dist/photoswipe.css';
 
 import '@tryghost/portal/umd/portal.min.js';
 
-import { parse as parseTwemoji } from 'twemoji';
+import twemoji from 'twemoji';
 
 // Register jQuery functions
 window.jQuery = window.$ = $;
@@ -66,7 +66,7 @@ $(function () {
     search();
     burger();
     theme();
-    parseTwemoji(document.body);
+    twemoji.parse(document.body);
 });
 
 $(window).on('scroll', function () {
