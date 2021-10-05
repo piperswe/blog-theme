@@ -17,7 +17,6 @@ import '@tryghost/portal/umd/portal.min.js';
 // Register jQuery functions
 window.jQuery = window.$ = $;
 require('infinite-scroll');
-require('lazysizes');
 require('owl.carousel');
 require('photoswipe/dist/photoswipe');
 require('photoswipe/dist/photoswipe-ui-default');
@@ -620,3 +619,29 @@ function pswp(container, element, trigger, caption, isGallery) {
         onThumbnailsClick(e);
     });
 }
+
+function generateSrcset(src) {
+    return `
+    /cdn-cgi/image/fit=scale-down,width=30,format=auto/${src} 30w,
+    /cdn-cgi/image/fit=scale-down,width=100,format=auto/${src} 100w,
+    /cdn-cgi/image/fit=scale-down,width=300,format=auto/${src} 300w,
+    /cdn-cgi/image/fit=scale-down,width=600,format=auto/${src} 600w,
+    /cdn-cgi/image/fit=scale-down,width=1000,format=auto/${src} 1000w,
+    /cdn-cgi/image/fit=scale-down,width=2000,format=auto/${src} 2000w
+    `;
+}
+
+function srcset() {
+    const imgs = Array.from(document.querySelectorAll('img:not([srcset])'));
+    for (const img of imgs) {
+        const srcset = generateSrcset(img.src);
+        img.dataset.srcset = srcset;
+        img.dataset.sizes = 'auto';
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+        img.classList.add('lazyload');
+    }
+}
+
+srcset();
+
+require('lazysizes');
