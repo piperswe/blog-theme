@@ -66,7 +66,7 @@ $(function () {
     search();
     burger();
     theme();
-    parseTwemoji();
+    parseTwemoji(document.body);
 });
 
 $(window).on('scroll', function () {
