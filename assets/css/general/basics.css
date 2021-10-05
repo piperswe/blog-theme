@@ -12,6 +12,7 @@
 @import "@fontsource/jetbrains-mono/400-italic.css";
 @import "@fontsource/jetbrains-mono/variable.css";
 @import "@fontsource/jetbrains-mono/variable-italic.css";
+@import "openmoji/font/openmoji.css";
 
 :root {
     --brand-color: var(--ghost-accent-color, #b946af);
@@ -31,17 +32,17 @@
     --twitter-color: #1da1f2;
     --rss-color: #f26522;
     --animation-base: ease-in-out;
-    --font-base: Cabin, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
-    --font-header: Sora, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
-    --font-mono: JetBrains Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; /* stylelint-disable-line value-keyword-case */
+    --font-base: OpenMojiColor, OpenMojiBlack, Cabin, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+    --font-header: OpenMojiColor, OpenMojiBlack, Sora, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+    --font-mono: OpenMojiColor, OpenMojiBlack, JetBrains Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; /* stylelint-disable-line value-keyword-case */
     --navbar-height: 80px;
 }
 
 @supports (font-variation-settings: normal) {
     :root {
-        --font-base: CabinVariable, Cabin, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
-        --font-header: SoraVariable, Sora, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
-        --font-mono: JetBrains MonoVariable, JetBrains Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; /* stylelint-disable-line value-keyword-case */
+        --font-base: OpenMojiColor, OpenMojiBlack, CabinVariable, Cabin, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+        --font-header: OpenMojiColor, OpenMojiBlack, SoraVariable, Sora, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+        --font-mono: OpenMojiColor, OpenMojiBlack, JetBrains MonoVariable, JetBrains Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; /* stylelint-disable-line value-keyword-case */
 
         font-variation-settings: "wght" 400;
     }
