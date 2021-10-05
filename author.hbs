@@ -1,15 +1,15 @@
 {{!< default}} <div class="content-area">
     <main class="site-main">
         {{#author}}
-        <section class="author container small">
+        <section class="h-card author container small">
             <div class="author-image-placeholder u-placeholder square">
-                <img class="author-image u-object-fit" src="{{img_url profile_image size="xs"}}" alt="{{name}}">
+                <img class="u-logo author-image u-object-fit" src="{{img_url profile_image size="xs"}}" alt="{{name}}">
             </div>
             {{#if website}}
-            <h1 class="author-name"><a href="{{website}}" target="_blank" rel="noopener noreferrer">{{name}}</a>
+            <h1 class="p-name author-name"><a href="{{website}}" target="_blank" rel="noopener noreferrer">{{name}}</a>
             </h1>
             {{else}}
-            <h1 class="author-name">{{name}}</h1>
+            <h1 class="p-name author-name">{{name}}</h1>
             {{/if}}
             {{#if location}}
             <span class="author-meta">{{location}}</span>
