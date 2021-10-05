@@ -51,7 +51,7 @@
     </div>
 
     <script>
-        const imgs = Array.from(document.querySelectorAll('img:not([srcset])'));
+        const imgs = Array.from(document.querySelectorAll('img:not([srcset]):not([data-srcset])'));
         for (const img of imgs) {
             const src = img.src;
             const srcset = `
