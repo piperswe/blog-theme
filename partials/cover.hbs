@@ -2,7 +2,15 @@
     <div class="cover-content">
         {{#if @site.icon}}
         <div class="cover-icon">
-            <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+            <img class="cover-icon-image"
+            data-srcset="/cdn-cgi/image/fit=scale-down,width=30,format=auto/{{@site.icon}} 30w,
+/cdn-cgi/image/fit=scale-down,width=100,format=auto/{{@site.icon}} 100w,
+/cdn-cgi/image/fit=scale-down,width=300,format=auto/{{@site.icon}} 300w,
+/cdn-cgi/image/fit=scale-down,width=600,format=auto/{{@site.icon}} 600w,
+/cdn-cgi/image/fit=scale-down,width=1000,format=auto/{{@site.icon}} 1000w,
+/cdn-cgi/image/fit=scale-down,width=2000,format=auto/{{@site.icon}} 2000w" data-sizes="auto"
+            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            src="{{@site.icon}}" alt="{{@site.title}}">
         </div>
         {{/if}}
 
