@@ -55,12 +55,12 @@
         for (const img of imgs) {
             const src = img.src;
             const srcset = `
-                /cdn-cgi/image/fit=scale-down,width=30,format=auto/${src} 30w,
-                /cdn-cgi/image/fit=scale-down,width=100,format=auto/${src} 100w,
-                /cdn-cgi/image/fit=scale-down,width=300,format=auto/${src} 300w,
-                /cdn-cgi/image/fit=scale-down,width=600,format=auto/${src} 600w,
-                /cdn-cgi/image/fit=scale-down,width=1000,format=auto/${src} 1000w,
-                /cdn-cgi/image/fit=scale-down,width=2000,format=auto/${src} 2000w
+                https://assets.piperswe.me/cdn-cgi/image/fit=scale-down,width=30,format=auto/${src} 30w,
+                https://assets.piperswe.me/cdn-cgi/image/fit=scale-down,width=100,format=auto/${src} 100w,
+                https://assets.piperswe.me/cdn-cgi/image/fit=scale-down,width=300,format=auto/${src} 300w,
+                https://assets.piperswe.me/cdn-cgi/image/fit=scale-down,width=600,format=auto/${src} 600w,
+                https://assets.piperswe.me/cdn-cgi/image/fit=scale-down,width=1000,format=auto/${src} 1000w,
+                https://assets.piperswe.me/cdn-cgi/image/fit=scale-down,width=2000,format=auto/${src} 2000w
             `;
             img.dataset.srcset = srcset;
             img.dataset.sizes = 'auto';
