@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-const { series, parallel, watch, src, dest } = gulp;
+const { series, src, dest } = gulp;
 import pump from 'pump';
 import livereload from 'gulp-livereload';
 import gulpStylelint from 'gulp-stylelint';
@@ -14,27 +14,6 @@ const gulpEsbuild = createGulpEsbuild({
 	piping: true,      // enables piping
 })
 
-function serve(done) {
-    livereload.listen();
-    done();
-}
-
-function handleError(done) {
-    return function (err) {
-        if (err) {
-            beeper();
-        }
-        return done(err);
-    };
-};
-
-function hbs(done) {
-    pump([
-        src(['*.hbs', 'partials/**/*.hbs', 'members/**/*.hbs']),
-        livereload()
-    ], handleError(done));
-}
-
 function pack(done) {
     pump([
         src([
@@ -45,13 +24,7 @@ function pack(done) {
             bundle: true,
             minify: true,
             plugins: [
-                svgrPlugin(),
-                // postCssPlugin({
-                //     plugins: [
-                //         postcssPreset,
-                //         autoprefixer
-                //     ],
-                // })
+                svgrPlugin()
             ],
             loader: {
                 '.ttf': 'file',
@@ -61,22 +34,8 @@ function pack(done) {
             },
             sourcemap: 'linked'
         }),
-        dest('assets/built/', { sourcemaps: '.' }),
-        livereload()
-    ], handleError(done));
-}
-
-function lint(done) {
-    pump([
-        src(['assets/css/**/*.css', '!assets/css/vendor/*']),
-        gulpStylelint({
-            fix: true,
-            reporters: [
-                { formatter: 'string', console: true }
-            ]
-        }),
-        dest('assets/css/')
-    ], handleError(done));
+        dest('assets/built/', { sourcemaps: '.' })
+    ], done);
 }
 
 function zipper(done) {
@@ -91,20 +50,14 @@ function zipper(done) {
         ]),
         zip(filename),
         dest('dist/')
-    ], handleError(done));
+    ], done);
 }
 
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', 'members/**/*.hbs'], hbs);
-const jsWatcher = () => watch('assets/js/**/*.js', pack);
-const watcher = parallel(hbsWatcher, jsWatcher);
 const build = pack;
 
 const zipTarget = series(build, zipper);
-const defaultTarget = series(build, serve, watcher);
 
 export {
     build,
-    lint,
-    zipTarget as zip,
-    defaultTarget as default
+    zipTarget as zip
 };
