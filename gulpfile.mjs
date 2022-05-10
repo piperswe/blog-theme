@@ -1,17 +1,18 @@
 import gulp from 'gulp';
 const { series, parallel, watch, src, dest } = gulp;
 import pump from 'pump';
-
-// gulp plugins and utils
 import livereload from 'gulp-livereload';
 import gulpStylelint from 'gulp-stylelint';
 import beeper from 'beeper';
 import zip from 'gulp-zip';
-import webpackStream from 'webpack-stream';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import webpack from 'webpack';
+import { createGulpEsbuild } from 'gulp-esbuild';
+import svgrPlugin from 'esbuild-plugin-svgr';
 import { readFileSync } from 'fs';
+
+const gulpEsbuild = createGulpEsbuild({
+	incremental: true, // enables the esbuild's incremental build
+	piping: true,      // enables piping
+})
 
 function serve(done) {
     livereload.listen();
@@ -39,56 +40,26 @@ function pack(done) {
         src([
             'assets/js/main.js',
         ]),
-        webpackStream({
-            entry: ['regenerator-runtime/runtime.js', './assets/js/main.js'],
-            mode: process.env.NODE_ENV || 'production',
-            devtool: 'source-map',
-            module: {
-                rules: [
-                    {
-                        test: /\.m?js$/,
-                        use: {
-                            loader: 'babel-loader',
-                            options: {
-                                presets: [
-                                    '@babel/preset-env',
-                                    '@babel/preset-react',
-                                ],
-                                compact: true,
-                            },
-                        },
-                    },
-                    {
-                        test: /\.svg$/,
-                        use: ['@svgr/webpack'],
-                    },
-                    {
-                        test: /\.css$/i,
-                        use: [
-                            MiniCssExtractPlugin.loader,
-                            'css-loader',
-                            {
-                                loader: 'postcss-loader',
-                                options: {
-                                    postcssOptions: {
-                                        plugins: [
-                                            'postcss-preset-env',
-                                            'autoprefixer',
-                                        ],
-                                    },
-                                },
-                            },
-                        ],
-                    },
-                ],
-            },
+        gulpEsbuild({
+            outfile: 'main.js',
+            bundle: true,
+            minify: true,
             plugins: [
-                new MiniCssExtractPlugin(),
-                new CssMinimizerPlugin(),
-                new webpack.EnvironmentPlugin({
-                    'REACT_APP_VERSION': process.env.REACT_APP_VERSION || '1.11.0'
-                }),
+                svgrPlugin(),
+                // postCssPlugin({
+                //     plugins: [
+                //         postcssPreset,
+                //         autoprefixer
+                //     ],
+                // })
             ],
+            loader: {
+                '.ttf': 'file',
+                '.woff2': 'file',
+                '.woff': 'file',
+                '.png': 'file'
+            },
+            sourcemap: 'linked'
         }),
         dest('assets/built/', { sourcemaps: '.' }),
         livereload()
@@ -135,5 +106,5 @@ export {
     build,
     lint,
     zipTarget as zip,
-    defaultTarget as defaultTarget
+    defaultTarget as default
 };

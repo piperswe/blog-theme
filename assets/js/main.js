@@ -4,7 +4,7 @@ import * as elasticlunr from 'elasticlunr';
 import '../css/screen.css';
 
 import 'katex';
-import 'katex/contrib/auto-render/auto-render';
+import 'katex/contrib/auto-render/auto-render.js';
 import 'katex/dist/katex.min.css';
 
 import Prism from './prism';

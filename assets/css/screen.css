@@ -1,4 +1,4 @@
-@import "normalize.css/normalize.css";
+@import url("normalize.css/normalize.css");
 @import "general/basics.css";
 @import "general/grid.css";
 @import "general/button.css";
