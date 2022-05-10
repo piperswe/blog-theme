@@ -413,6 +413,8 @@ function search() {
         var result = index.search(e.target.value, { expand: true });
         var output = '';
 
+        console.log(result)
+
         result.forEach(function (post) {
             output +=
                 '<div class="search-result-row">' +
