@@ -1,5 +1,5 @@
 import $ from './jquery'
-import * as elasticlunr from 'elasticlunr';
+import elasticlunr from 'elasticlunr';
 
 import '../css/screen.css';
 
