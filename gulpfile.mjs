@@ -1,17 +1,14 @@
 import gulp from 'gulp';
 const { series, src, dest } = gulp;
 import pump from 'pump';
-import livereload from 'gulp-livereload';
-import gulpStylelint from 'gulp-stylelint';
-import beeper from 'beeper';
 import zip from 'gulp-zip';
 import { createGulpEsbuild } from 'gulp-esbuild';
 import svgrPlugin from 'esbuild-plugin-svgr';
 import { readFileSync } from 'fs';
 
 const gulpEsbuild = createGulpEsbuild({
-	incremental: true, // enables the esbuild's incremental build
-	piping: true,      // enables piping
+	incremental: false, // enables the esbuild's incremental build
+	piping: true,       // enables piping
 })
 
 function pack(done) {
