@@ -14,7 +14,7 @@ const gulpEsbuild = createGulpEsbuild({
 function pack(done) {
     pump([
         src([
-            'assets/js/main.js',
+            'assets/js/main.ts',
         ]),
         gulpEsbuild({
             outfile: 'main.js',

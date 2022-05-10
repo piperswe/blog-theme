@@ -2987,6 +2987,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/elasticlunr@npm:^0.9.5":
+  version: 0.9.5
+  resolution: "@types/elasticlunr@npm:0.9.5"
+  checksum: 126231fabb0af9303d279815f489db3bcefae1656f1b617725f10b0c38875d06a1c48b2067986ab6697bdea36ee66cdc8afb86d70853717b2019e1371518d01d
+  languageName: node
+  linkType: hard
+
 "@types/eslint@npm:^7.28.2":
   version: 7.29.0
   resolution: "@types/eslint@npm:7.29.0"
@@ -6573,6 +6580,7 @@ __metadata:
     "@fontsource/jetbrains-mono": ^4.5.8
     "@fontsource/sora": ^4.5.8
     "@tryghost/portal": ^1.22.4
+    "@types/elasticlunr": ^0.9.5
     elasticlunr: ^0.9.5
     esbuild: ^0.14.38
     esbuild-plugin-svgr: ^1.0.1
@@ -6600,6 +6608,7 @@ __metadata:
     stylelint: 14.8.2
     stylelint-config-standard: 25.0.0
     stylelint-order: 5.0.0
+    typescript: ^4.6.4
     webpack-stream: ^7.0.0
   languageName: unknown
   linkType: soft
@@ -18276,6 +18285,26 @@ __metadata:
   version: 0.0.6
   resolution: "typedarray@npm:0.0.6"
   checksum: 33b39f3d0e8463985eeaeeacc3cb2e28bc3dfaf2a5ed219628c0b629d5d7b810b0eb2165f9f607c34871d5daa92ba1dc69f49051cf7d578b4cbd26c340b9d1b1
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^4.6.4":
+  version: 4.6.4
+  resolution: "typescript@npm:4.6.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: e7bfcc39cd4571a63a54e5ea21f16b8445268b9900bf55aee0e02ad981be576acc140eba24f1af5e3c1457767c96cea6d12861768fb386cf3ffb34013718631a
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>":
+  version: 4.6.4
+  resolution: "typescript@patch:typescript@npm%3A4.6.4#~builtin<compat/typescript>::version=4.6.4&hash=bda367"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 1cb434fbc637d347be90e3a0c6cd05e33c38f941713c8786d3031faf1842c2c148ba91d2fac01e7276b0ae3249b8633f1660e32686cc7a8c6a8fd5361dc52c66
   languageName: node
   linkType: hard
 
