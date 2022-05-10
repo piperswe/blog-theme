@@ -79,5 +79,6 @@
         "prism-themes": "^1.9.0",
         "prismjs": "^1.27.0",
         "regenerator-runtime": "^0.13.9"
-    }
+    },
+    "packageManager": "yarn@3.2.0"
 }
