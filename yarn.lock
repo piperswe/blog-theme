@@ -3079,6 +3079,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jquery@npm:*, @types/jquery@npm:^3.5.14":
+  version: 3.5.14
+  resolution: "@types/jquery@npm:3.5.14"
+  dependencies:
+    "@types/sizzle": "*"
+  checksum: 159d6f804ed1a204b3f79f2d591a271d82e866bd45bd49fb6ef40561a25dbe0f47ec7815681b44cc2db5598425f72811e7e80ab0e983d980470998ac56feb375
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.3, @types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.7, @types/json-schema@npm:^7.0.8":
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
@@ -3090,6 +3099,13 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/katex@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "@types/katex@npm:0.14.0"
+  checksum: 330e0d0337ba48c87f5b793965fbad673653789bf6e50dfe8d726a7b0cbefd37195055e31503aae629814aa79447e4f23a4b87ad1ac565c0d9a9d9978836f39b
   languageName: node
   linkType: hard
 
@@ -3130,6 +3146,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/owl.carousel@npm:^2.3.3":
+  version: 2.3.3
+  resolution: "@types/owl.carousel@npm:2.3.3"
+  dependencies:
+    "@types/jquery": "*"
+  checksum: c9fce86202b96d135482407a0b89897a146a5c86c4c5b5a86003c8e9471e27990c720c95117068998c68d7459798cd6f29487387b76e798cd685744eb74498ce
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -3137,10 +3162,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/photoswipe@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@types/photoswipe@npm:4.1.2"
+  checksum: 58f9b85171b5d24a70dea8b7cd68eaaef29159f05130f2284320ef438874c538f00e81763d4025d79fb03366180cff12e01c4a40d04a0c823ca4df656ee8b912
+  languageName: node
+  linkType: hard
+
 "@types/prettier@npm:^2.0.0":
   version: 2.4.2
   resolution: "@types/prettier@npm:2.4.2"
   checksum: 76e230b2d11028af11fe12e09b2d5b10b03738e9abf819ae6ebb0f78cac13d39f860755ce05ac3855b608222518d956628f5d00322dc206cc6d1f2d8d1519f1e
+  languageName: node
+  linkType: hard
+
+"@types/prismjs@npm:^1.26.0":
+  version: 1.26.0
+  resolution: "@types/prismjs@npm:1.26.0"
+  checksum: cd5e7a6214c1f4213ec512a5fcf6d8fe37a56b813fc57ac95b5ff5ee074742bfdbd2f2730d9fd985205bf4586728e09baa97023f739e5aa1c9735a7c1ecbd11a
   languageName: node
   linkType: hard
 
@@ -3166,6 +3205,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: e99fc7cc6265407987b30deda54c1c24bb1478803faf6037557a774b2f034c5b097ffd65847daa87e82a61a250d919f35c3588654b0fdaa816906650f596d1b0
+  languageName: node
+  linkType: hard
+
+"@types/sizzle@npm:*":
+  version: 2.3.3
+  resolution: "@types/sizzle@npm:2.3.3"
+  checksum: 586a9fb1f6ff3e325e0f2cc1596a460615f0bc8a28f6e276ac9b509401039dd242fa8b34496d3a30c52f5b495873922d09a9e76c50c2ab2bcc70ba3fb9c4e160
   languageName: node
   linkType: hard
 
@@ -6581,6 +6627,11 @@ __metadata:
     "@fontsource/sora": ^4.5.8
     "@tryghost/portal": ^1.22.4
     "@types/elasticlunr": ^0.9.5
+    "@types/jquery": ^3.5.14
+    "@types/katex": ^0.14.0
+    "@types/owl.carousel": ^2.3.3
+    "@types/photoswipe": ^4.1.2
+    "@types/prismjs": ^1.26.0
     elasticlunr: ^0.9.5
     esbuild: ^0.14.38
     esbuild-plugin-svgr: ^1.0.1
