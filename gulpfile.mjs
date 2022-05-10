@@ -1,15 +1,17 @@
-const { series, parallel, watch, src, dest } = require('gulp');
-const pump = require('pump');
+import gulp from 'gulp';
+const { series, parallel, watch, src, dest } = gulp;
+import pump from 'pump';
 
 // gulp plugins and utils
-const livereload = require('gulp-livereload');
-const gulpStylelint = require('gulp-stylelint');
-const beeper = require('beeper');
-const zip = require('gulp-zip');
-const webpackStream = require('webpack-stream');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const webpack = require('webpack');
+import livereload from 'gulp-livereload';
+import gulpStylelint from 'gulp-stylelint';
+import beeper from 'beeper';
+import zip from 'gulp-zip';
+import webpackStream from 'webpack-stream';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import webpack from 'webpack';
+import { readFileSync } from 'fs';
 
 function serve(done) {
     livereload.listen();
@@ -107,7 +109,7 @@ function lint(done) {
 }
 
 function zipper(done) {
-    const filename = require('./package.json').name + '.zip';
+    const filename = JSON.parse(readFileSync('./package.json').toString()).name + '.zip';
 
     pump([
         src([
@@ -126,7 +128,12 @@ const jsWatcher = () => watch('assets/js/**/*.js', pack);
 const watcher = parallel(hbsWatcher, jsWatcher);
 const build = pack;
 
-exports.build = build;
-exports.lint = lint;
-exports.zip = series(build, zipper);
-exports.default = series(build, serve, watcher);
+const zipTarget = series(build, zipper);
+const defaultTarget = series(build, serve, watcher);
+
+export {
+    build,
+    lint,
+    zipTarget as zip,
+    defaultTarget as defaultTarget
+};

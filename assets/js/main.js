@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from './jquery'
 import * as elasticlunr from 'elasticlunr';
 
 import '../css/screen.css';
@@ -7,37 +7,10 @@ import 'katex';
 import 'katex/contrib/auto-render/auto-render';
 import 'katex/dist/katex.min.css';
 
-import Prism from 'prismjs';
-
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'photoswipe/dist/photoswipe.css';
+import Prism from './prism';
 
 import '@tryghost/portal/umd/portal.min.js';
 
-// Register jQuery functions
-window.jQuery = window.$ = $;
-require('infinite-scroll');
-require('owl.carousel');
-require('lazysizes');
-require('photoswipe/dist/photoswipe');
-require('photoswipe/dist/photoswipe-ui-default');
-require('fitvids.js');
-
-// Set up syntax highlighting
-window.Prism = Prism;
-require('prismjs/components/prism-markup');
-require('prismjs/components/prism-clike');
-require('prismjs/components/prism-css');
-require('prismjs/components/prism-javascript');
-require('prismjs/components/prism-nix');
-require('prismjs/components/prism-bash');
-require('prismjs/components/prism-shell-session');
-require('prismjs/components/prism-json');
-require('prismjs/components/prism-yaml');
-require('prismjs/components/prism-rust');
-require('prismjs/components/prism-clojure');
-require('prismjs/components/prism-go');
-require('prismjs/components/prism-nginx');
 Prism.highlightAll();
 
 var html = $('html');
