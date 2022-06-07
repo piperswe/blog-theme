@@ -64,7 +64,7 @@
         "fitvids.js": "^1.2.0",
         "infinite-scroll": "^4.0.1",
         "jquery": "^3.6.0",
-        "katex": "^0.15.6",
+        "katex": "^0.16.0",
         "lazysizes": "^5.3.2",
         "normalize.css": "^8.0.1",
         "openmoji": "^13.1.0",
