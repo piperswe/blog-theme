@@ -59,7 +59,7 @@
         "@fontsource/cabin": "^4.5.6",
         "@fontsource/jetbrains-mono": "^4.5.8",
         "@fontsource/sora": "^4.5.8",
-        "@tryghost/portal": "^2.1.6",
+        "@tryghost/portal": "^2.6.0",
         "elasticlunr": "^0.9.5",
         "fitvids.js": "^1.2.0",
         "infinite-scroll": "^4.0.1",
