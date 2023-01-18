@@ -1678,10 +1678,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/jetbrains-mono@npm:^4.5.8":
-  version: 4.5.8
-  resolution: "@fontsource/jetbrains-mono@npm:4.5.8"
-  checksum: 0992e488220b61b5c29f3b77f2eb83a3e1bda72623ab982cb6c30df68e21e3ffecc93cf51bc6f8d0ed1fd93f641d263591fee36647e16f779d694c98229cc536
+"@fontsource/jetbrains-mono@npm:^4.5.12":
+  version: 4.5.12
+  resolution: "@fontsource/jetbrains-mono@npm:4.5.12"
+  checksum: 887fc5e98486fa8a711a2f55175002e7b7aa232113a71484455dca393dbea9cfa61ef423f51348a20b1ad85992f7910307f1247dd811e697618ff34c0da2a223
   languageName: node
   linkType: hard
 
@@ -6663,7 +6663,7 @@ __metadata:
   resolution: "dawn@workspace:."
   dependencies:
     "@fontsource/cabin": ^4.5.6
-    "@fontsource/jetbrains-mono": ^4.5.8
+    "@fontsource/jetbrains-mono": ^4.5.12
     "@fontsource/sora": ^4.5.8
     "@tryghost/portal": ^2.1.6
     "@types/elasticlunr": ^0.9.5
